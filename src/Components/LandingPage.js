@@ -137,9 +137,9 @@ const LandingPage = () => {
           </div>
           <div className="flex justify-center space-x-8 mb-6">
             {/* Enlaces adicionales */}
-            <a href="/about" className="text-white hover:text-gray-400">Acerca de</a>
-            <a href="/privacy" className="text-white hover:text-gray-400">Privacidad</a>
-            <a href="/terms" className="text-white hover:text-gray-400">Términos de uso</a>
+            <a href="/about" className="text-white hover:text-gray-400 no-underline">Acerca de</a>
+            <a href="/privacy" className="text-white hover:text-gray-400 no-underline">Privacidad</a>
+            <a href="/terms" className="text-white hover:text-gray-400 no-underline">Términos de uso</a>
           </div>
           <p className="text-sm">&copy; 2024 Quantum Coders. Todos los derechos reservados.</p>
         </div>

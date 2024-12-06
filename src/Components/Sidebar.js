@@ -7,22 +7,22 @@ const Sidebar = () => {
       <h2 className="text-2xl font-bold text-black mb-4">Dashboard</h2>
       <ul>
         <li>
-          <Link to="/dashboard/route-manager" className="block py-2 px-4 text-black hover:bg-white rounded">
+          <Link to="/dashboard/route-manager" className="block py-2 px-4 text-black hover:bg-white rounded no-underline">
             Route Manager
           </Link>
         </li>
         <li>
-          <Link to="/dashboard/comments" className="block py-2 px-4 text-black hover:bg-white rounded">
+          <Link to="/dashboard/comments" className="block py-2 px-4 text-black hover:bg-white rounded no-underline">
           Fleet monitoring
           </Link>
         </li>
         <li>
-          <Link to="/dashboard/users" className="block py-2 px-4 text-black hover:bg-white rounded">
+          <Link to="/dashboard/users" className="block py-2 px-4 text-black hover:bg-white rounded no-underline">
             Usuarios
           </Link>
         </li>
         <li>
-          <Link to="/dashboard/roles" className="block py-2 px-4 text-black hover:bg-white rounded">
+          <Link to="/dashboard/roles" className="block py-2 px-4 text-black hover:bg-white rounded no-underline">
             Roles
           </Link>
         </li>
