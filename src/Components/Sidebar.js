@@ -21,11 +21,6 @@ const Sidebar = () => {
             Usuarios
           </Link>
         </li>
-        <li>
-          <Link to="/dashboard/roles" className="block py-2 px-4 text-black hover:bg-white rounded no-underline">
-            Roles
-          </Link>
-        </li>
       </ul>
     </div>
   );

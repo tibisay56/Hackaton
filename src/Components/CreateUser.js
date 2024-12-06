@@ -5,9 +5,10 @@ import '../Usuarios.css';
 
 const UsersSection = () => {
   const [users, setUsers] = useState([]);
-  const [newUser, setNewUser] = useState({ name: '', email: '' });
+  const [newUser, setNewUser] = useState({ name: '', email: '', phone: '', city: '', country: '', rol: '' });
   const [editUser, setEditUser] = useState(null);
-  const navigate = useNavigate(); 
+  const [errors, setErrors] = useState({});
+  const navigate = useNavigate();
 
   // Fetch users
   useEffect(() => {
@@ -23,12 +24,28 @@ const UsersSection = () => {
     fetchUsers();
   }, []);
 
+  // Validation function
+  const validateForm = () => {
+    const newErrors = {};
+    if (!newUser.name) newErrors.name = 'Nombre es requerido';
+    if (!newUser.email) newErrors.email = 'Correo electrónico es requerido';
+    if (!/\S+@\S+\.\S+/.test(newUser.email)) newErrors.email = 'Correo electrónico no es válido';
+    if (!newUser.phone) newErrors.phone = 'Teléfono es requerido';
+    if (newUser.city === 'Seleccionar Ciudad') newErrors.city = 'Ciudad es requerida';
+    if (newUser.country === 'Seleccionar País') newErrors.country = 'País es requerido';
+    if (newUser.rol === 'Seleccionar Rol') newErrors.rol = 'Rol es requerido';
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
+
   // Create new user
   const handleCreateUser = async () => {
+    if (!validateForm()) return; // Only proceed if form is valid
+
     try {
       const response = await api.post('/users', newUser);
       setUsers([...users, response.data]);
-      setNewUser({ name: '', email: '' }); 
+      setNewUser({ name: '', email: '', phone: '', city: '', country: '', rol: '' }); 
     } catch (error) {
       console.error('Error creating user', error);
     }
@@ -72,39 +89,86 @@ const UsersSection = () => {
           value={newUser.name}
           onChange={(e) => setNewUser({ ...newUser, name: e.target.value })}
         />
+        {errors.name && <p className="text-red-500">{errors.name}</p>}
+
         <input
           type="email"
           placeholder="Correo Electrónico"
           value={newUser.email}
           onChange={(e) => setNewUser({ ...newUser, email: e.target.value })}
         />
+        {errors.email && <p className="text-red-500">{errors.email}</p>}
+
         <input
-            type="text"
-            placeholder="Teléfono"
-            value={newUser.phone}
-            onChange={(e) => setNewUser({ ...newUser, phone: e.target.value })}
-            />
-            <input
-            type="text"
-            placeholder="Ciudad"
-            value={newUser.city}
-            onChange={(e) => setNewUser({ ...newUser, city: e.target.value })}
-            />
-            <input
-            type="text"
-            placeholder="País"
+          type="number"
+          placeholder="Teléfono"
+          value={newUser.phone}
+          onChange={(e) => setNewUser({ ...newUser, phone: e.target.value })}
+        />
+        {errors.phone && <p className="text-red-500">{errors.phone}</p>}
+
+        <label className="block text-gray-600 mb-1" htmlFor="city">
+          Ciudad
+        </label>
+        <select
+          id="city"
+          value={newUser.city}
+          onChange={(e) => setNewUser({ ...newUser, city: e.target.value })}
+          className="w-full px-3 py-2 border rounded-lg"
+        >
+          <option value="Seleccionar Ciudad">Seleccionar Ciudad</option>
+          <option value="Barranquilla">Barranquilla</option>
+          <option value="Cali">Cali</option>
+          <option value="Medellín">Medellín</option>
+          <option value="Bogotá">Bogotá</option>
+        </select>
+        {errors.city && <p className="text-red-500">{errors.city}</p>}
+
+        <div>
+          <label className="block text-gray-600 mb-1" htmlFor="country">
+            País
+          </label>
+          <select
+            id="country"
             value={newUser.country}
             onChange={(e) => setNewUser({ ...newUser, country: e.target.value })}
-            />
-        <div className="flex space-x-4">
-        <button onClick={handleCreateUser} className="bg-blue-600 text-white px-4 py-2 rounded">
-            Crear Post
-        </button>
-        
-        <button onClick={() => navigate('/dashboard/users')} className="bg-gray-300 text-white px-4 py-2 rounded">
+            className="w-full px-3 py-2 border rounded-lg"
+          >
+            <option value="Seleccionar País">Seleccionar País</option>
+            <option value="Colombia">Colombia</option>
+            <option value="México">México</option>
+            <option value="Argentina">Argentina</option>
+            <option value="Chile">Chile</option>
+          </select>
+          {errors.country && <p className="text-red-500">{errors.country}</p>}
+        </div>
+
+        <div>
+          <label className="block text-gray-600 mb-1" htmlFor="rol">
+            Rol
+          </label>
+          <select
+            id="rol"
+            value={newUser.rol}
+            onChange={(e) => setNewUser({ ...newUser, rol: e.target.value })}
+            className="w-full px-3 py-2 border rounded-lg"
+          >
+            <option value="Seleccionar Rol">Seleccionar Rol</option>
+            <option value="Coordinador">Coordinador</option>
+            <option value="Conductor">Conductor</option>
+          </select>
+          {errors.rol && <p className="text-red-500">{errors.rol}</p>}
+        </div>
+
+        <div className="flex space-x-4 mt-4">
+          <button onClick={handleCreateUser} className="bg-blue-600 text-white px-4 py-2 rounded">
+            Crear Usuario
+          </button>
+
+          <button onClick={() => navigate('/dashboard/users')} className="bg-gray-300 text-white px-4 py-2 rounded">
             Cancelar
-        </button>
-      </div>
+          </button>
+        </div>
       </div>
 
       {/* Update User */}

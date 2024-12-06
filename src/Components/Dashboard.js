@@ -26,7 +26,6 @@ const Dashboard = () => {
             <Route path="comments" element={<CommentsSection />} />
             <Route path="users" element={<UsersSection />} />
             <Route path="users/create" element={<CreateUser />} />
-            <Route path="roles" element={<RolesSection />} />
           </Routes>
 
           <Outlet />
