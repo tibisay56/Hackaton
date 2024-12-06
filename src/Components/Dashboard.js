@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route, Routes, Outlet } from 'react-router-dom';
 import Sidebar from './Sidebar';
-import PostsSection from './PostsSection';
+import RouteManager from './RouteManager';
 import CommentsSection from './CommentsSection';
 import UsersSection from './UsersSection';
 import RolesSection from './RolesSection';
@@ -18,10 +18,9 @@ const Dashboard = () => {
       <div className="dashboard-main flex">
         <Sidebar /> 
         <div className="content flex-1 p-8">
-          <h1 className="text-4xl font-bold text-blue-600 mb-8">¡Bienvenido al Dashboard!</h1>
           
           <Routes>
-            <Route path="posts" element={<PostsSection />} />
+            <Route path="route-manager" element={<RouteManager />} />
             <Route path="posts/create" element={<CreatePost />} />
             <Route path="comments/create" element={<CreateComment />} />
             <Route path="comments" element={<CommentsSection />} />

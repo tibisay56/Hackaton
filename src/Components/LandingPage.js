@@ -1,80 +1,148 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Navbar from './Navbar';
+import { useNavigate } from 'react-router-dom';
 
 const LandingPage = () => {
+  const navigate = useNavigate();
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+  const [error, setError] = useState('');
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (email === 'admin@example.com' && password === 'password123') {
+      navigate('/dashboard'); 
+    } else {
+      setError('Credenciales inválidas, por favor intente de nuevo.');
+    }
+  };
+
   return (
-    <div className="bg-gray-50 font-sans leading-normal tracking-normal">
-
+    <div className="bg-black font-sans leading-normal tracking-normal">
       <Navbar />
-      
-      {/* Sección principal (hero section) */}
-      <section className="bg-blue-600 text-white text-center py-20">
-      <img 
-          src="/emprendedores.jpg" 
-          alt="Emprendedores" 
-          className="mx-auto mb-8 w-full h-64 object-contain" 
-        />
-        <h1 className="text-4xl font-bold mb-4">Emprende tu Futuro</h1>
-        <p className="text-xl mb-8 max-w-3xl mx-auto">Plataforma para emprendedores, conecta, comparte y crece.</p>
-        <a
-          href="/dashboard"
-          className="bg-white text-blue-600 px-6 py-3 rounded-full text-lg font-semibold hover:bg-gray-100 transition"
-        >
-          Comienza Ahora
-        </a>
-      </section>
 
-      {/* Sección de Servicios */}
-      <section id="services" className="py-20 bg-white text-center">
-        <h2 className="text-3xl font-bold text-gray-800 mb-12">Nuestros Servicios</h2>
-        <div className="flex justify-center gap-12 flex-wrap">
-          <div className="bg-gray-100 p-8 rounded-lg shadow-md w-80">
-            <h3 className="text-2xl font-semibold text-blue-600 mb-4">Mentoría</h3>
-            <p className="text-gray-600">Recibe asesoría de expertos para hacer crecer tu emprendimiento.</p>
-          </div>
-          <div className="bg-gray-100 p-8 rounded-lg shadow-md w-80">
-            <h3 className="text-2xl font-semibold text-blue-600 mb-4">Red de Contactos</h3>
-            <p className="text-gray-600">Conéctate con otros emprendedores y comparte experiencias.</p>
-          </div>
-          <div className="bg-gray-100 p-8 rounded-lg shadow-md w-80">
-            <h3 className="text-2xl font-semibold text-blue-600 mb-4">Recursos Exclusivos</h3>
-            <p className="text-gray-600">Accede a herramientas y materiales que te ayudarán a crecer.</p>
+      <section className="relative bg-black text-white text-center py-60 px-8">
+        {/* Video solo en el hero */}
+        <video
+          className="absolute top-0 left-0 w-full h-full object-cover z-0"
+          autoPlay
+          loop
+          muted
+          playsInline
+        >
+          <source src="/videos/mundo.mp4" type="video/mp4" />
+          Tu navegador no soporta videos.
+        </video>
+
+        <div className="relative z-10 flex justify-between items-center flex-col md:flex-row">
+          <div className="flex flex-col items-start mx-8 md:ml-64 text-center md:text-left">
+            {/* Título */}
+            <h1 className="text-4xl font-bold mb-4 text-left md:text-5xl">
+              Optimiza tus rutas fácilmente
+            </h1>
+            {/* Descripción */}
+            <p className="text-xl mb-8 max-w-3xl text-left md:text-2xl">
+              Planificación inteligente de rutas para un transporte <br /> más seguro y rentable.
+            </p>
+            {/* Botón */}
+            <a
+              href="/dashboard"
+              className="bg-transparent text-white px-6 py-3 rounded-full text-lg font-semibold hover:bg-white hover:text-black transition border border-white"
+            >
+              Comienza Ahora
+            </a>
           </div>
         </div>
       </section>
 
-      {/* Sección de testimonios */}
-      <section className="py-20 bg-blue-50">
-        <h2 className="text-3xl font-bold text-gray-800 text-center mb-12">Lo que Dicen Nuestros Emprendedores</h2>
-        <div className="flex justify-center gap-12 flex-wrap">
-          <div className="bg-white p-8 rounded-lg shadow-md w-80">
-            <p className="text-gray-600 mb-4">"Una plataforma increíble, me ha ayudado a expandir mi negocio y conocer nuevas oportunidades."</p>
-            <h4 className="font-semibold text-gray-800">Juan Pérez</h4>
-            <p className="text-gray-500">Emprendedor, Startup Tech</p>
+       {/* Sección de Geotab */}
+       <section id="geotab" className="py-20 bg-white text-center">
+          <h2 className="text-3xl font-bold text-black mb-12">Nuestros Servicios</h2>
+          <div className="flex justify-center gap-12 flex-wrap">
+            <div className="bg-gray-100 p-8 rounded-lg shadow-md w-80">
+              <h3 className="text-2xl font-semibold text-black mb-4">Gestión de Usuarios</h3>
+              <p className="text-gray-600">Registrar y gestionar usuarios como gestores o pasajeros para una administración eficiente.</p>
+            </div>
+            <div className="bg-gray-100 p-8 rounded-lg shadow-md w-80">
+              <h3 className="text-2xl font-semibold text-black mb-4">Gestión de Vehículos</h3>
+              <p className="text-gray-600">Registrar vehículos y sus características, como capacidad, consumo y más, para optimizar tu flota.</p>
+            </div>
+            <div className="bg-gray-100 p-8 rounded-lg shadow-md w-80">
+              <h3 className="text-2xl font-semibold text-black mb-4">Planificación de Rutas</h3>
+              <p className="text-gray-600">Registrar rutas con origen, destino, estado de la vía, costos asociados y más para optimizar la logística.</p>
+            </div>
           </div>
-          <div className="bg-white p-8 rounded-lg shadow-md w-80">
-            <p className="text-gray-600 mb-4">"Gracias a los recursos y mentoría, pude mejorar mi modelo de negocio y atraer más clientes."</p>
-            <h4 className="font-semibold text-gray-800">Laura Gómez</h4>
-            <p className="text-gray-500">Fundadora, E-commerce</p>
-          </div>
-        </div>
-      </section>
 
-      {/* Sección de llamada a la acción */}
-      <section className="bg-blue-600 text-white text-center py-20">
-        <h2 className="text-3xl font-bold mb-4">¿Estás Listo para Emprender?</h2>
-        <p className="text-xl mb-8">Únete a nosotros y comienza a construir tu futuro hoy.</p>
-        <a
-          href="/register"
-          className="bg-white text-blue-600 px-6 py-3 rounded-full text-lg font-semibold hover:bg-gray-100 transition"
-        >
-          Regístrate Ahora
-        </a>
-      </section>
+            {/* Segunda fila con dos cuadros */}
+              <div className="flex justify-center gap-12 flex-wrap mt-12">
+                <div className="bg-gray-100 p-8 rounded-lg shadow-md w-80">
+                  <h3 className="text-2xl font-semibold text-black mb-4">Optimización de Rutas</h3>
+                  <p className="text-gray-600">Implementa un sistema para la planificación de rutas, considerando restricciones de tiempo y optimización de costos.</p>
+                </div>
+                <div className="bg-gray-100 p-8 rounded-lg shadow-md w-80">
+                  <h3 className="text-2xl font-semibold text-black mb-4">Predicción de Demanda</h3>
+                  <p className="text-gray-600">Predice la demanda de transporte utilizando datos históricos y variables contextuales para un servicio eficiente.</p>
+                </div>
+              </div>
+        </section>
+
+          {/* Sección de testimonios */}
+          <section className="py-20 bg-black">
+          <h2 className="text-2xl md:text-3xl font-bold text-white text-center mb-8 md:mb-12">
+            Lo que Dicen Nuestros Clientes
+          </h2>
+            <div className="flex justify-center gap-12 flex-wrap">
+              <div className="bg-white p-8 rounded-lg shadow-md w-80">
+                <p className="text-gray-600 mb-4">"Una plataforma increíble que me ha permitido optimizar mis rutas y gestionar mis flotas de manera más eficiente."</p>
+                <h4 className="font-semibold text-gray-800">Carlos Martínez</h4>
+                <p className="text-gray-500">Gerente de Flotas, Transporte X</p>
+              </div>
+              <div className="bg-white p-8 rounded-lg shadow-md w-80">
+                <p className="text-gray-600 mb-4">"Gracias a Geotab, hemos mejorado la planificación de nuestras rutas, optimizando costos y reduciendo tiempos de espera."</p>
+                <h4 className="font-semibold text-gray-800">Ana López</h4>
+                <p className="text-gray-500">Directora de Operaciones, Logística Global</p>
+              </div>
+            </div>
+          </section>
+
+          {/* Sección de llamada a la acción */}
+          <section className="bg-black text-white text-center py-20">
+            <h2 className="text-3xl font-bold mb-4">¿Estás Listo para Optimizar tu Logística?</h2>
+            <p className="text-xl mb-8">Rutas inteligentes, transporte seguro y rentable.</p>
+            <a
+              href="/register"
+              className="bg-white text-black px-6 py-3 rounded-full text-lg font-semibold hover:bg-gray-100 transition"
+            >
+              Comienza Ahora
+            </a>
+          </section>
 
       {/* Footer */}
-      <footer className="bg-gray-800 text-white text-center py-6">
-        <p>&copy; 2024 EmprendeTuFuturo. Todos los derechos reservados.</p>
+      <footer className="bg-gray-800 text-white text-center py-12">
+        <div className="container mx-auto px-4">
+          <div className="flex justify-center space-x-6 mb-6">
+            {/* Iconos de redes sociales */}
+            <a href="https://facebook.com" className="text-white hover:text-gray-400">
+              <i className="fab fa-facebook fa-2x"></i>
+            </a>
+            <a href="https://twitter.com" className="text-white hover:text-gray-400">
+              <i className="fab fa-twitter fa-2x"></i>
+            </a>
+            <a href="https://linkedin.com" className="text-white hover:text-gray-400">
+              <i className="fab fa-linkedin fa-2x"></i>
+            </a>
+            <a href="https://instagram.com" className="text-white hover:text-gray-400">
+              <i className="fab fa-instagram fa-2x"></i>
+            </a>
+          </div>
+          <div className="flex justify-center space-x-8 mb-6">
+            {/* Enlaces adicionales */}
+            <a href="/about" className="text-white hover:text-gray-400">Acerca de</a>
+            <a href="/privacy" className="text-white hover:text-gray-400">Privacidad</a>
+            <a href="/terms" className="text-white hover:text-gray-400">Términos de uso</a>
+          </div>
+          <p className="text-sm">&copy; 2024 Quantum Coders. Todos los derechos reservados.</p>
+        </div>
       </footer>
     </div>
   );
