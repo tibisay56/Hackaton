@@ -47,7 +47,7 @@ const LandingPage = () => {
             {/* Botón */}
             <a
               href="/dashboard"
-              className="bg-transparent text-white px-6 py-3 rounded-full text-lg font-semibold hover:bg-white hover:text-black transition border border-white"
+              className="bg-transparent text-white px-6 py-3 rounded-full text-lg font-semibold hover:bg-white hover:text-black transition border border-white no-underline"
             >
               Comienza Ahora
             </a>
@@ -111,7 +111,7 @@ const LandingPage = () => {
             <p className="text-xl mb-8">Rutas inteligentes, transporte seguro y rentable.</p>
             <a
               href="/register"
-              className="bg-white text-black px-6 py-3 rounded-full text-lg font-semibold hover:bg-gray-100 transition"
+              className="bg-white text-black px-6 py-3 rounded-full text-lg font-semibold hover:bg-gray-100 transition no-underline"
             >
               Comienza Ahora
             </a>
