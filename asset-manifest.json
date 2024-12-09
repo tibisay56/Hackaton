@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/hackaton/static/css/main.cd38632b.css",
-    "main.js": "/hackaton/static/js/main.81020160.js",
-    "index.html": "/hackaton/index.html",
-    "main.cd38632b.css.map": "/hackaton/static/css/main.cd38632b.css.map",
-    "main.81020160.js.map": "/hackaton/static/js/main.81020160.js.map"
+    "main.css": "/Hackaton/static/css/main.cd38632b.css",
+    "main.js": "/Hackaton/static/js/main.81020160.js",
+    "index.html": "/Hackaton/index.html",
+    "main.cd38632b.css.map": "/Hackaton/static/css/main.cd38632b.css.map",
+    "main.81020160.js.map": "/Hackaton/static/js/main.81020160.js.map"
   },
   "entrypoints": [
     "static/css/main.cd38632b.css",
