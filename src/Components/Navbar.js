@@ -9,8 +9,8 @@ const Navbar = () => {
 
   return (
     <nav className="bg-black shadow-lg">
-      <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-        <h1 className="text-3xl text-white font-bold">
+      <div className="max-w-7xl mx-auto px-4 py-2 flex justify-between items-center">
+        <h1 className="text-2xl text-white font-bold">
         <a href="/" className="no-underline text-white">GeoTab</a>
         </h1>
 
@@ -20,11 +20,11 @@ const Navbar = () => {
           className="lg:hidden text-white focus:outline-none"
         >
           {isOpen ? (
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
             </svg>
           ) : (
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
             </svg>
           )}
@@ -32,23 +32,17 @@ const Navbar = () => {
 
         {/* Menú de navegación */}
         <div
-          className={`lg:flex ${isOpen ? 'block' : 'hidden'} flex-col gap-4 mt-4 lg:mt-0 lg:flex-row`}
+          className={`lg:flex ${isOpen ? 'block' : 'hidden'} flex-col gap-4 mt-4 lg:mt-0 lg:flex-row mb-4`}
         >
           <Link
-            to="/"
-            className="text-white font-semibold px-4 py-2 hover:bg-gray-700 rounded-md no-underline"
-          >
-            Inicio
-          </Link>
-          <Link
             to="/login"
-            className="text-white font-semibold px-4 py-2 hover:bg-gray-700 rounded-md no-underline"
+            className="text-white font-semibold px-3 py-1 hover:bg-gray-700 rounded-md no-underline"
           >
             Login
           </Link>
           <Link
             to="/register"
-            className="text-white font-semibold px-4 py-2 hover:bg-gray-700 rounded-md no-underline"
+            className="text-white font-semibold px-3 py-1 hover:bg-gray-700 rounded-md no-underline"
           >
             Registro
           </Link>

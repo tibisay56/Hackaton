@@ -45,7 +45,7 @@ const UserSection = () => {
         <h2 className="text-2xl font-bold">Users</h2>
         <button
           onClick={handleCreateRedirect}
-          className="bg-blue-600 text-white px-4 py-2 rounded flex items-center"
+          className="bg-gray-600 text-white px-4 py-2 rounded flex items-center"
         >
           <FaPlus className="mr-2" /> Crear User
         </button>

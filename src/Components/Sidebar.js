@@ -12,11 +12,6 @@ const Sidebar = () => {
           </Link>
         </li>
         <li>
-          <Link to="/dashboard/comments" className="block py-2 px-4 text-black hover:bg-white rounded no-underline">
-          Fleet monitoring
-          </Link>
-        </li>
-        <li>
           <Link to="/dashboard/users" className="block py-2 px-4 text-black hover:bg-white rounded no-underline">
             Usuarios
           </Link>
