@@ -1,0 +1,3 @@
+# Ignorar credentials.js que contiene claves API
+src/Services/credentials.js
+
