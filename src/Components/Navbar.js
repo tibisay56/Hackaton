@@ -11,7 +11,7 @@ const Navbar = () => {
     <nav className="bg-black shadow-lg">
       <div className="max-w-7xl mx-auto px-4 py-2 flex justify-between items-center">
         <h1 className="text-2xl text-white font-bold">
-        <a href="/" className="no-underline text-white">GeoTab</a>
+        <a href="/Hackaton/" className="no-underline text-white">GeoTab</a>
         </h1>
 
         {/* Ícono de hamburguesa, solo visible en pantallas pequeñas */}
