@@ -30,7 +30,7 @@ const LandingPage = () => {
           muted
           playsInline
         >
-          <source src="/videos/mundo.mp4" type="video/mp4" />
+          <source src="Hackaton/videos/mundo.mp4" type="video/mp4" />
           Tu navegador no soporta videos.
         </video>
 
@@ -46,7 +46,7 @@ const LandingPage = () => {
             </p>
             {/* Botón */}
             <a
-              href="/dashboard"
+              href="/hackaton/dashboard"
               className="bg-transparent text-white px-6 py-3 rounded-full text-lg font-semibold hover:bg-white hover:text-black transition border border-white no-underline"
             >
               Comienza Ahora
@@ -110,7 +110,7 @@ const LandingPage = () => {
             <h2 className="text-3xl font-bold mb-4">¿Estás Listo para Optimizar tu Logística?</h2>
             <p className="text-xl mb-8">Rutas inteligentes, transporte seguro y rentable.</p>
             <a
-              href="/register"
+              href="/hackaton/register"
               className="bg-white text-black px-6 py-3 rounded-full text-lg font-semibold hover:bg-gray-100 transition no-underline"
             >
               Comienza Ahora

@@ -102,7 +102,7 @@ const RegisterPage = () => {
           <div className="text-center mt-6">
             <p className="text-sm text-gray-600">
               ¿Ya tienes cuenta?{' '}
-              <a href="/login" className="text-gray-300 hover:underline">Inicia sesión aquí</a>
+              <a href="/hackaton/login" className="text-gray-300 hover:underline">Inicia sesión aquí</a>
             </p>
           </div>
         </div>

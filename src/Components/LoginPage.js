@@ -77,7 +77,7 @@ const LoginPage = () => {
           <div className="text-center mt-6">
             <p className="text-sm text-gray-600">
               ¿No tienes cuenta?{' '}
-              <a href="/register" className="text-white hover:underline">Regístrate aquí</a>
+              <a href="/Hackaton/register" className="text-white hover:underline">Regístrate aquí</a>
             </p>
           </div>
         </div>
