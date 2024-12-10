@@ -29,7 +29,7 @@ const LandingPage = () => {
           muted
           playsInline
         >
-          <source src="Hackaton/videos/mundo.mp4" type="video/mp4" />
+          <source src="/Hackaton/videos/mundo.mp4" type="video/mp4" />
           Tu navegador no soporta videos.
         </video>
 
