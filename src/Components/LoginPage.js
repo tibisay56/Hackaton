@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Navbar from './Navbar';
+import { Link } from 'react-router-dom';
 
 const LoginPage = () => {
   const navigate = useNavigate();
@@ -74,7 +75,12 @@ const LoginPage = () => {
           <div className="text-center mt-6">
             <p className="text-sm text-gray-600">
               ¿No tienes cuenta?{' '}
-              <a href="/Hackaton/register" className="text-white hover:underline">Regístrate aquí</a>
+              <Link
+              to="/register"
+              className="text-white hover:underline"
+            >
+              Regístrate aquí
+            </Link>
             </p>
           </div>
         </div>

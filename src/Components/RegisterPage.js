@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Navbar from './Navbar';
+import { Link } from 'react-router-dom';
 
 const RegisterPage = () => {
   const navigate = useNavigate();
@@ -99,7 +100,12 @@ const RegisterPage = () => {
           <div className="text-center mt-6">
             <p className="text-sm text-gray-600">
               ¿Ya tienes cuenta?{' '}
-              <a href="/hackaton/login" className="text-gray-300 hover:underline">Inicia sesión aquí</a>
+              <Link
+                to="/login"
+                className="text-gray-300 hover:underline"
+              >
+                Inicia sesión aquí
+              </Link>
             </p>
           </div>
         </div>

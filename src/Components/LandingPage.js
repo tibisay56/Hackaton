@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Navbar from './Navbar';
 import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const LandingPage = () => {
   const navigate = useNavigate();
@@ -40,12 +41,12 @@ const LandingPage = () => {
             <p className="text-xl mb-8 max-w-3xl text-left md:text-2xl">
               Planificación inteligente de rutas para un transporte <br /> más seguro y rentable.
             </p>
-            <a
-              href="/hackaton/dashboard"
+            <Link
+              to="/dashboard"
               className="bg-transparent text-white px-6 py-3 rounded-full text-lg font-semibold hover:bg-white hover:text-black transition border border-white no-underline"
             >
               Comienza Ahora
-            </a>
+            </Link>
           </div>
         </div>
       </section>
@@ -100,12 +101,12 @@ const LandingPage = () => {
           <section className="bg-black text-white text-center py-20">
             <h2 className="text-3xl font-bold mb-4">¿Estás Listo para Optimizar tu Logística?</h2>
             <p className="text-xl mb-8">Rutas inteligentes, transporte seguro y rentable.</p>
-            <a
-              href="/hackaton/register"
+            <Link
+              to="/register"
               className="bg-white text-black px-6 py-3 rounded-full text-lg font-semibold hover:bg-gray-100 transition no-underline"
             >
               Comienza Ahora
-            </a>
+            </Link>
           </section>
 
       <footer className="bg-gray-800 text-white text-center py-12">
