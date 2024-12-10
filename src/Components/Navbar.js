@@ -10,11 +10,7 @@ const Navbar = () => {
     <nav className="bg-black shadow-lg">
       <div className="max-w-7xl mx-auto px-4 py-2 flex justify-between items-center">
         <h1 className="text-2xl text-white font-bold">
-<<<<<<< HEAD
-        <a href="/" className="no-underline text-white">GeoTab</a>
-=======
         <a href="/hackaton" className="no-underline text-white">GeoTab</a>
->>>>>>> master
         </h1>
 
         <button
