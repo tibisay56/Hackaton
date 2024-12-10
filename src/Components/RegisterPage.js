@@ -28,10 +28,7 @@ const RegisterPage = () => {
 
   return (
     <div className="min-h-screen bg-black">
-      {/* Navbar fijo */}
       <Navbar className="fixed top-0 left-0 w-full z-50 bg-gray-800 shadow-lg" />
-
-      {/* Espaciado para el contenido */}
       <div className="pt-20 flex items-center justify-center">
         <div className="w-full max-w-sm p-6 bg-gray-700 rounded-lg shadow-lg">
           <h2 className="text-3xl font-semibold text-center text-white mb-6">¡Regístrate!</h2>

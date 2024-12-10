@@ -4,7 +4,6 @@ import { Link } from 'react-router-dom';
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
-  // Función para alternar el menú
   const toggleMenu = () => setIsOpen(!isOpen);
 
   return (
@@ -14,7 +13,6 @@ const Navbar = () => {
         <a href="/hackaton" className="no-underline text-white">GeoTab</a>
         </h1>
 
-        {/* Ícono de hamburguesa, solo visible en pantallas pequeñas */}
         <button
           onClick={toggleMenu}
           className="lg:hidden text-white focus:outline-none"
@@ -30,7 +28,6 @@ const Navbar = () => {
           )}
         </button>
 
-        {/* Menú de navegación */}
         <div
           className={`lg:flex ${isOpen ? 'block' : 'hidden'} flex-col gap-4 mt-4 lg:mt-0 lg:flex-row mb-4`}
         >

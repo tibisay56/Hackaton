@@ -10,7 +10,6 @@ const UsersSection = () => {
   const [errors, setErrors] = useState({});
   const navigate = useNavigate();
 
-  // Fetch users
   useEffect(() => {
     const fetchUsers = async () => {
       try {
@@ -24,7 +23,6 @@ const UsersSection = () => {
     fetchUsers();
   }, []);
 
-  // Validation function
   const validateForm = () => {
     const newErrors = {};
     if (!newUser.name) newErrors.name = 'Nombre es requerido';
@@ -38,9 +36,8 @@ const UsersSection = () => {
     return Object.keys(newErrors).length === 0;
   };
 
-  // Create new user
   const handleCreateUser = async () => {
-    if (!validateForm()) return; // Only proceed if form is valid
+    if (!validateForm()) return; 
 
     try {
       const response = await api.post('/users', newUser);
@@ -51,7 +48,6 @@ const UsersSection = () => {
     }
   };
 
-  // Handle editing a user
   const handleEditUser = (user) => {
     setEditUser(user);
   };
@@ -60,17 +56,16 @@ const UsersSection = () => {
     try {
       const response = await api.put(`/users/${editUser.id}`, editUser);
       setUsers(users.map(user => (user.id === editUser.id ? response.data : user)));
-      setEditUser(null); // Reset after updating
+      setEditUser(null); 
     } catch (error) {
       console.error('Error updating user', error);
     }
   };
 
-  // Delete user
   const handleDeleteUser = async (userId) => {
     try {
       await api.delete(`/users/${userId}`);
-      setUsers(users.filter(user => user.id !== userId)); // Remove deleted user from state
+      setUsers(users.filter(user => user.id !== userId)); 
     } catch (error) {
       console.error('Error deleting user', error);
     }
@@ -80,7 +75,6 @@ const UsersSection = () => {
     <section className='users-section'>
       <h2>Usuarios</h2>
 
-      {/* Create New User */}
       <div>
         <h3>Crear Nuevo Usuario</h3>
         <input
@@ -171,7 +165,6 @@ const UsersSection = () => {
         </div>
       </div>
 
-      {/* Update User */}
       {editUser && (
         <div>
           <h3>Editar Usuario</h3>
@@ -189,7 +182,6 @@ const UsersSection = () => {
         </div>
       )}
 
-      {/* Display Users */}
       <ul>
         {users.map(user => (
           <li key={user.id}>

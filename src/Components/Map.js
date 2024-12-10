@@ -14,10 +14,10 @@ const center = {
 
 const Map = ({ onSelectLocation }) => {
   const { isLoaded, loadError } = useLoadScript({
-    googleMapsApiKey: credentials.mapsKey, // Asegúrate de tener tu clave API configurada
+    googleMapsApiKey: credentials.mapsKey, 
   });
 
-  const [markerPosition, setMarkerPosition] = useState(null); // Estado para almacenar la posición del marcador
+  const [markerPosition, setMarkerPosition] = useState(null);
 
   if (loadError) return <div>Error loading maps</div>;
   if (!isLoaded) return <div>Loading maps...</div>;
@@ -26,10 +26,8 @@ const Map = ({ onSelectLocation }) => {
     const lat = event.latLng.lat();
     const lng = event.latLng.lng();
 
-    // Establecer la posición del marcador
     setMarkerPosition({ lat, lng });
 
-    // Pasar las coordenadas al componente padre (RouteManager)
     onSelectLocation({ lat, lng });
   };
 
@@ -38,7 +36,7 @@ const Map = ({ onSelectLocation }) => {
       mapContainerStyle={containerStyle}
       center={center}
       zoom={10}
-      onClick={handleMapClick} // Establecer el listener para clic
+      onClick={handleMapClick} 
     >
       {markerPosition && (
         <Marker position={markerPosition} />

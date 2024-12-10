@@ -19,7 +19,7 @@ const RouteManager = () => {
   const [kilometersTraveled, setKilometersTraveled] = useState('');
   const [startTime, setStartTime] = useState('');
   const [errors, setErrors] = useState({});
-  const [formType, setFormType] = useState(''); // Estado para controlar qué formulario se muestra
+  const [formType, setFormType] = useState('');
   const [totalConsumption, setTotalConsumption] = useState(null);
   const navigate = useNavigate();
   const [showTable, setShowTable] = useState(false);
@@ -27,8 +27,8 @@ const RouteManager = () => {
     const [licenseCategory, setLicenseCategory] = useState('A1');
     const [licenseExpDate, setLicenseExpDate] = useState('2010-02-27');
     const [licenseExpiryDate, setLicenseExpiryDate] = useState('2022-02-26');
-    const [averageSpeed, setAverageSpeed] = useState(20); // km/h
-    const [accuracy, setAccuracy] = useState(60.14); // porcentaje
+    const [averageSpeed, setAverageSpeed] = useState(20); 
+    const [accuracy, setAccuracy] = useState(60.14);
     const [events, setEvents] = useState({
       accident: 0.70,
       maintenance: 0.69,
@@ -47,9 +47,9 @@ const RouteManager = () => {
       return fineProbability.toFixed(2);
     };
    const handleButtonClick = () => {
-        setShowTable(true); // Muestra la tabla cuando se hace clic
+        setShowTable(true); 
       };
-  // Fetch routes from the API
+
   useEffect(() => {
     const fetchRoutes = async () => {
       try {
@@ -62,7 +62,6 @@ const RouteManager = () => {
     fetchRoutes();
   }, []);
 
-  // Select location handler
   const handleSelectLocation = (coords) => {
     setSelectedCoordinates(coords);
     console.log('Coordenadas seleccionadas:', coords);
@@ -72,20 +71,20 @@ const RouteManager = () => {
     event.preventDefault();
 
         // Calcular el consumo
-        let consumptionPer100km = 10; // Consumo base para una camioneta
-        if (vehicleCategory === 'Camión') consumptionPer100km = 20; // Si es un camión
-        else if (vehicleCategory === 'Automóviles') consumptionPer100km = 8; // Si es un automóvil
-        else if (vehicleCategory === 'Motos') consumptionPer100km = 5; // Si es una moto
+        let consumptionPer100km = 10; 
+        if (vehicleCategory === 'Camión') consumptionPer100km = 20; 
+        else if (vehicleCategory === 'Automóviles') consumptionPer100km = 8; 
+        else if (vehicleCategory === 'Motos') consumptionPer100km = 5; 
       
         // Ajuste según el estado de la vía
-        if (roadCondition === 'Excelente') consumptionPer100km *= 0.9; // Menos consumo si es excelente
-        else if (roadCondition === 'Crítico') consumptionPer100km *= 1.2; // Más consumo si es crítico
+        if (roadCondition === 'Excelente') consumptionPer100km *= 0.9; 
+        else if (roadCondition === 'Crítico') consumptionPer100km *= 1.2; 
       
         // Calcular el consumo total en litros
         const totalLiters = (kilometersTraveled / 100) * consumptionPer100km;
-        const totalGalons = totalLiters * 0.264172; // Convertir litros a galones
+        const totalGalons = totalLiters * 0.264172;
       
-        setTotalConsumption(totalGalons.toFixed(2)); // Actualiza el estado con el consumo total
+        setTotalConsumption(totalGalons.toFixed(2));
         show_alerta('Formulario enviado correctamente', 'success', '');
       };
    
@@ -96,22 +95,21 @@ const RouteManager = () => {
         <div className="flex justify-between items-center mb-4">
           <h2 className="text-2xl font-bold mb-8">Route Manager</h2>
 
-          {/* Buttons */}
           <div className="mt-8">
             <button
-              onClick={() => setFormType('consumo')} // Establecer el formulario de consumo
-              className="bg-white text-black px-4 py-2 mr-4 rounded-full border"
+              onClick={() => setFormType('consumo')} 
+              className="bg-white text-black px-4 py-2 mr-4 rounded-full border hover:bg-black hover:text-white  !important"
             >
               Consumo
             </button>
             <button
-              onClick={() => setFormType('planRuta')} // Establecer el formulario de plan de ruta
-              className="bg-black text-white px-4 py-2 mr-4 rounded-full border"
+              onClick={() => setFormType('multas')} 
+              className="bg-white text-black px-4 py-2 mr-4 rounded-full border"
             >
               Multas
             </button>
             <button
-              onClick={() => setFormType('evento')} // Establecer el formulario de plan de ruta
+              onClick={() => setFormType('evento')} 
               className="bg-white text-black px-4 py-2 mr-4 rounded-full border"
             >
               Eventos
@@ -194,10 +192,10 @@ const RouteManager = () => {
                   Hora Inicio (ISO8601)
                 </label>
                 <input
-                  type="datetime-local" // Tipo para seleccionar fecha y hora
+                  type="datetime-local" 
                   id="startTime"
-                  value={startTime} // Estado correspondiente
-                  onChange={(e) => setStartTime(e.target.value)} // Actualiza el estado
+                  value={startTime} 
+                  onChange={(e) => setStartTime(e.target.value)} 
                   className="w-full px-3 py-2 border rounded-lg"
                 />
               </div>
@@ -236,7 +234,7 @@ const RouteManager = () => {
           </div>
         )}
 
-      {formType === 'planRuta' && (
+      {formType === 'multas' && (
         <div className="bg-white p-4 rounded-lg shadow-md mt-6">
         <h3 className="text-xl font-semibold text-gray-700 mb-2 text-center">Cálculo probabilidad multa</h3>
         
@@ -348,7 +346,7 @@ const RouteManager = () => {
               </button>
 
           <div className="overflow-x-auto">
-            {/* Muestra la tabla solo si showTable es true */}
+           
       {showTable && (
         <div className="overflow-x-auto mt-6">
           <table className="min-w-full table-auto">
@@ -379,11 +377,10 @@ const RouteManager = () => {
       {/* Mapa */}
       <div className="w-full lg:w-1/2 mt-32 h-[500px]">
         <Map
-          onSelectLocation={handleSelectLocation} // Enviar las coordenadas al manejar la selección
-          coordinates={selectedCoordinates} // Coordenadas seleccionadas
+          onSelectLocation={handleSelectLocation} 
+          coordinates={selectedCoordinates} 
         />   
         
-        {/* Coordenadas Seleccionadas */}
      <div className="bg-white p-4 rounded-lg shadow-md mt-10 m w-full sm:w-96">
         <h3 className="text-xl font-semibold text-gray-700 mb-2">Coordenadas Seleccionadas</h3>
         <div className="space-y-2">

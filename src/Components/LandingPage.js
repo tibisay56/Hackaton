@@ -20,9 +20,7 @@ const LandingPage = () => {
   return (
     <div className="bg-black font-sans leading-normal tracking-normal">
       <Navbar />
-
       <section className="relative bg-black text-white text-center py-60 px-8">
-        {/* Video solo en el hero */}
         <video
           className="absolute top-0 left-0 w-full h-full object-cover z-0"
           autoPlay
@@ -36,15 +34,12 @@ const LandingPage = () => {
 
         <div className="relative z-10 flex justify-between items-center flex-col md:flex-row">
           <div className="flex flex-col items-start mx-8 md:ml-64 text-center md:text-left">
-            {/* Título */}
             <h1 className="text-4xl font-bold mb-4 text-left md:text-5xl">
               Optimiza tus rutas fácilmente
             </h1>
-            {/* Descripción */}
             <p className="text-xl mb-8 max-w-3xl text-left md:text-2xl">
               Planificación inteligente de rutas para un transporte <br /> más seguro y rentable.
             </p>
-            {/* Botón */}
             <a
               href="/hackaton/dashboard"
               className="bg-transparent text-white px-6 py-3 rounded-full text-lg font-semibold hover:bg-white hover:text-black transition border border-white no-underline"
@@ -55,7 +50,6 @@ const LandingPage = () => {
         </div>
       </section>
 
-       {/* Sección de Geotab */}
        <section id="geotab" className="py-20 bg-white text-center">
           <h2 className="text-3xl font-bold text-black mb-12">Nuestros Servicios</h2>
           <div className="flex justify-center gap-12 flex-wrap">
@@ -73,7 +67,6 @@ const LandingPage = () => {
             </div>
           </div>
 
-            {/* Segunda fila con dos cuadros */}
               <div className="flex justify-center gap-12 flex-wrap mt-12">
                 <div className="bg-gray-100 p-8 rounded-lg shadow-md w-80">
                   <h3 className="text-2xl font-semibold text-black mb-4">Optimización de Rutas</h3>
@@ -86,7 +79,6 @@ const LandingPage = () => {
               </div>
         </section>
 
-          {/* Sección de testimonios */}
           <section className="py-20 bg-black">
           <h2 className="text-2xl md:text-3xl font-bold text-white text-center mb-8 md:mb-12">
             Lo que Dicen Nuestros Clientes
@@ -105,7 +97,6 @@ const LandingPage = () => {
             </div>
           </section>
 
-          {/* Sección de llamada a la acción */}
           <section className="bg-black text-white text-center py-20">
             <h2 className="text-3xl font-bold mb-4">¿Estás Listo para Optimizar tu Logística?</h2>
             <p className="text-xl mb-8">Rutas inteligentes, transporte seguro y rentable.</p>
@@ -117,11 +108,9 @@ const LandingPage = () => {
             </a>
           </section>
 
-      {/* Footer */}
       <footer className="bg-gray-800 text-white text-center py-12">
         <div className="container mx-auto px-4">
           <div className="flex justify-center space-x-6 mb-6">
-            {/* Iconos de redes sociales */}
             <a href="https://facebook.com" className="text-white hover:text-gray-400">
               <i className="fab fa-facebook fa-2x"></i>
             </a>
@@ -136,7 +125,6 @@ const LandingPage = () => {
             </a>
           </div>
           <div className="flex justify-center space-x-8 mb-6">
-            {/* Enlaces adicionales */}
             <a href="/about" className="text-white hover:text-gray-400 no-underline">Acerca de</a>
             <a href="/privacy" className="text-white hover:text-gray-400 no-underline">Privacidad</a>
             <a href="/terms" className="text-white hover:text-gray-400 no-underline">Términos de uso</a>
