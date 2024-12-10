@@ -8,7 +8,7 @@ import './App.css';
 
 const App = () => {
   return (
-    <Router> basename="/Hackaton"
+    <Router basename="/Hackaton"> 
       <Routes>
         <Route path="/" element={<LandingPage />} />
         <Route path="/login" element={<LoginPage />} />
