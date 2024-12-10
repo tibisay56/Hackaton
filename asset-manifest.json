@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/Hackaton/static/css/main.cd38632b.css",
-    "main.js": "/Hackaton/static/js/main.81020160.js",
+    "main.js": "/Hackaton/static/js/main.cf3453b7.js",
     "index.html": "/Hackaton/index.html",
     "main.cd38632b.css.map": "/Hackaton/static/css/main.cd38632b.css.map",
-    "main.81020160.js.map": "/Hackaton/static/js/main.81020160.js.map"
+    "main.cf3453b7.js.map": "/Hackaton/static/js/main.cf3453b7.js.map"
   },
   "entrypoints": [
     "static/css/main.cd38632b.css",
-    "static/js/main.81020160.js"
+    "static/js/main.cf3453b7.js"
   ]
 }
